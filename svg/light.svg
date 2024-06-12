@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 465 405">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: url(#_무제_그라디언트_10);
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="-787.74" y="484.68" width="732.37" height="516.46"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-2" x="-545.51" y="483.62" width="490.14" height="518.46"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="10846.8" y1="478" x2="11270.63" y2="478" gradientTransform="translate(11010.56) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="10957.04" y1="478" x2="11160.39" y2="478" xlink:href="#linear-gradient"/>
+    <linearGradient id="_무제_그라디언트_10" data-name="무제 그라디언트 10" x1="56.48" y1="202.5" x2="402.32" y2="202.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73ffd0"/>
+      <stop offset=".49" stop-color="#f3fffb" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#73ffd0"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-7">
+    <g class="cls-6">
+      <ellipse class="cls-1" cx="-48.16" cy="478" rx="211.91" ry="224.15"/>
+      <ellipse class="cls-4" cx="-48.16" cy="478" rx="101.67" ry="107.55"/>
+      <ellipse class="cls-3" cx="-48.16" cy="478" rx="79.62" ry="84.22"/>
+    </g>
+  </g>
+  <polygon class="cls-5" points="280.57 21.83 280.57 21.02 178.51 21.02 56.48 383.98 178.51 383.98 280.29 383.98 280.57 383.98 402.32 383.98 280.57 21.83"/>
+</svg>

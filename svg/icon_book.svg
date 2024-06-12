@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45 45">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ff71ab;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        stroke: #ffd2e9;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: .75px;
+      }
+
+      .cls-3 {
+        fill: #ffd2e9;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="7.15" y="4.41" width="30.7" height="36.17" rx="3.32" ry="3.32"/>
+    </clipPath>
+  </defs>
+  <rect class="cls-2" x="7.15" y="4.41" width="30.7" height="36.17" rx="3.32" ry="3.32"/>
+  <g class="cls-5">
+    <rect class="cls-3" x="8.47" y="33.98" width="31.57" height="5.62" rx="2.81" ry="2.81"/>
+  </g>
+  <line class="cls-4" x1="11.81" y1="7.17" x2="11.81" y2="31.68"/>
+  <rect class="cls-3" x="16.1" y="10.13" width="17.02" height="6.04" rx="1.97" ry="1.97"/>
+</svg>
