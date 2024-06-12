@@ -1,0 +1,283 @@
+.box {
+    background-image: url('svg/room_pet3.svg');
+    transition: .5s ease;
+}
+.pet {
+    position: absolute;
+    display: inline-block;
+    left: 300px;
+    animation: scaleAnimation 2s infinite;
+    top: 320px;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    transition: transform 1s ease;
+    transition: left 1s ease;
+    transition: top 1s ease;
+}
+
+.talk_alone, .talk_bye {
+    position: absolute;
+    top: 300px;
+    left: 420px;
+    width: 140px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+  .gameover {
+    position: absolute;
+    width: 400px;
+    top: 270px;
+    left: 300px;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s ease;
+  }
+  .gameover_txt {
+    position: absolute;
+    text-decoration: none;
+    color: #ff76b3;
+    border: solid 1px #ff76b3;
+    padding: 3px 20px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 2px 2px #ff76b3;
+    top: 404px;
+    left: 570px;
+    transition: .5s ease;
+    opacity: 0;
+    transition: .5s ease;
+    display: none;
+  }
+.gameover_txt:hover {
+    color: #FFCFE5;
+    background: #ff76b3;
+}
+
+.next_btn {
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-right: 25px solid transparent;
+}
+.next_btn:hover {
+    border-left: 25px solid rgb(255, 249, 214);
+}
+.talk_with p {
+    color: #fff;
+}
+
+#clothes_btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #F9F0CD;
+    border-radius: 10px;
+    border: solid 3px #ff76b3;
+    box-shadow: 1px 1px 2px 2px hsl(333, 100%, 86%);
+    top: 560px;
+    left: 10px;
+    transition: .5s ease;
+}
+#clothes_btn:hover {
+    background: #ff76b3;
+}
+#clothes_btn img {
+    position: absolute;
+    width: 30px;
+    top: 8px;
+    left: 1px;
+}
+
+.spaceship {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 250px;
+    height: 250px;
+    top: 170px;
+    left: 380px;
+    opacity: 0;
+    transition: 1s ease;
+    display: none;
+}
+.spaceship_light{
+    position: absolute;
+    background-image: url("svg/light.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 250px;
+    top: 300px;
+    left: 365px;
+    opacity: 0;
+    transition: all 1s ease;
+    filter: blur(10px);
+    display: none;
+}
+
+
+
+/* 
+CLOTHES====================== */
+.clothes {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    transition: .5s ease;
+}
+
+
+
+
+
+.sell_container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cloth_btn {
+    position: relative;
+    background: #ff76b3;
+    width: 90px;
+    height: 40px;
+    left: 150px;
+    border-radius: 15px;
+    font-size: 30px;
+    color: #fff;
+    transition: .5s ease;
+}
+.cloth_btn:hover {
+    background: #FFCFE5;
+}
+.sell_container h3 {
+    color: #FFCFE5;
+}
+
+.clothes_sell {
+    position: absolute;
+    /* left: 365px; */
+    left: 800px;
+    width: 390px;
+    height: 491px;
+    background: #fff;
+    padding-top: 10px;
+    transition: 1s ease;
+}
+.clothes_sell .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+.sell {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border: #FFCFE5 2px solid;
+    margin: 2px;
+    transition: .5s ease;
+    border-radius: 5px;
+}
+.sell:hover {
+    background: #FFCFE5;
+}
+.sell img {
+    width: 70px;
+}
+
+.sell img, .sell p {
+    position: absolute;
+    display: inline-block;
+    left: 10px;
+}
+
+.sell1 img {
+    top: 11px;
+}
+.sell2 img {
+    top: 11px;
+}
+.sell3 img {
+    top: 21px;
+}
+.sell4 img {
+    top: 21px;
+}
+.sell5 img {
+    top: 31px;
+}
+.sell6 img {
+    top: 31px;
+}
+.sell7 img {
+    top: 28px;
+}
+.sell8 img {
+    top: 38px;
+}
+.sell9 img {
+    top: 38px;
+}
+.sell10 img {
+    top: 31px;
+}
+.sell11 img {
+    top: 10px;
+}
+.sell12 img {
+    top: 25px;
+}
+
+.alert {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-image: url("clothes/arlet.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 140px;
+    left: 150px;
+    display: none;
+    opacity: 0;
+}
+.alert .yes, .no {
+    position: absolute;
+    color: #ff76b3;
+    border: solid 1px #ff76b3;
+    padding: 3px 20px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 2px 2px #ff76b3;
+    transition: .5s ease;
+    top: 132px;
+}
+.alert .yes {
+    left: 240px;
+}
+.alert .no {
+    left: 310px;
+}
+.alert .yes:hover, .no:hover {
+    background-color: #ff76b3;
+}
+
+.talk_back {
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    width: 100px;
+    opacity: 0;
+    transition: 1s ease;
+}

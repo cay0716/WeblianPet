@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('png/bg.jpg');
+    background-size: contain;
+}
+#wrap {
+    font-family: "Dongle", sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.folder {
+    margin: 0 auto;
+    width: 900px;
+    height: 650px;
+    background-image: url('svg/folder.svg');
+    background-size: cover;
+    position: relative;
+    margin-top: 40px;
+    box-shadow: 5px 5px 5px 5px rgb(255, 176, 190);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.box {
+    display: inline-block;
+    width: 771px;
+    height: 550px;
+    position: absolute;
+    top: 129px;
+    left: 145px;
+    z-index: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+button {
+    position: absolute;
+    font-family: "Dongle", sans-serif;
+    font-size: 20px;
+    z-index: 2;
+    background-color: #F9F0CD;
+    width: 128px;
+    border: none;
+    border-bottom: solid 2px #FF71AB;
+    color: #FF71AB;
+    transition: all .6s ease;
+    text-align: left;
+}
+button:hover {
+    background-color: #e8d99d;
+}
+button li {
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+}
+button img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+/* 
+=====================================btn */
+
+.heart, .dumbbell, .flower, .book{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+.heart {
+    top: 430px;
+    left: 430px;
+    background-image: url('svg/icon_heart.svg');
+    opacity: 0;
+}
+.dumbbell {
+    background-image: url('svg/icon_noah.svg');
+    opacity: 0;
+    top: 430px;
+    left: 530px;
+    transition: all 1s;
+}
+.flower {
+    background-image: url('svg/icon_bam.svg');
+    top: 430px;
+    left: 430px;
+    opacity: 0;
+}
+.book {
+    top: 510px;
+    left: 400px;
+    opacity: 0;
+}
+
+
+#send_love {
+    top: 130px;
+    left: 0px;
+}
+#dumbbell_btn {
+    top: 165px;
+    left: 0px;
+}
+#flower_btn {
+    top: 200px;
+    left: 0px;
+}
+#book_btn {
+    top: 235px;
+    left: 0px;
+}
+#eat_btn {
+    top: 270px;
+    left: 0px;
+}
+#talk_btn {
+    top: 305px;
+    left: 0px;
+}
+#sleep_btn {
+    top: 340px;
+    left: 0px;
+}
+
+/* 
+ */
+
+.talk_with {
+    position: absolute;
+    width: 771px;
+    height: 180px;
+    top: 300px;
+    left: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: none;
+
+    transition: .5s ease;
+}
+.next_btn {
+    position: absolute;
+    top: 120px;
+    left: 620px;
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    transition: .1s ease;
+}
+.talk_with p {
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    font-size: 30px;
+    transition: .1s ease;
+    text-align: left;
+}    
+.sound {
+    position: absolute;
+    background: #ff9dcb;
+    border: solid 3px #f85fa4;
+    border-radius: 50%;
+    background-image: url("bgm/sound_on.svg");
+    width: 30px;
+    height: 30px;
+    top: 550px;
+    left: 850px;
+    z-index: 100000;
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹계인펫밤비어른</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game3.css">
+
+<style>
+
+    .pet {
+        background-image: url('svg/pet_3_bam_front.svg');
+    }
+
+    .book {
+        background-image: url('svg/book_yellow.svg');
+      }
+    
+    @keyframes eating {
+        0% { background-image: url('svg/pet_3_bam_eating1.svg'); }
+        14% { background-image: url('svg/pet_3_bam_eating2.svg'); }
+        28% { background-image: url('svg/pet_3_bam_eating3.svg'); }
+        42% { background-image: url('svg/pet_3_bam_eating4.svg'); }
+        56% { background-image: url('svg/pet_3_bam_eating5.svg'); }
+        70% { background-image: url('svg/pet_3_bam_eating6.svg'); }
+        84% { background-image: url('svg/pet_3_bam_eating7.svg'); }
+        100% { background-image: url('svg/pet_3_bam_eating8.svg'); }
+    }
+    .next_btn {
+        
+        border-left: 25px solid rgb(255, 171, 219);
+    }
+    .spaceship {
+        background-image: url("svg/end_bam_1.svg");
+    }
+
+    .clothes3 {
+        left: -10px;
+        width: 140px;
+    }
+    .clothes2 {
+        left: -10px;
+        top: -39px;
+        width: 145px;
+    }
+    .clothes1 {
+        left: 0px;
+        top: -5px;
+        width: 120px;
+    }
+    .clothes4 {
+        width: 120px;
+        left: 0;
+        top: -9px;
+    }
+    .clothes6 {
+        width: 50px;
+        left: 35px;
+        top: 82px;
+    }
+    .clothes7 {
+        width: 50px;
+        left: 35px;
+        top: 82px;
+    }
+    .clothes9 {
+        width: 45px;
+        left: 35px;
+        top: 82px;
+    }
+    .clothes10 {
+        width: 100px;
+        left: 10px;
+        top: 82px;
+    }
+    .clothes11 {
+        width: 100px;
+        left: 10px;
+        top: 82px;
+    }
+    .clothes14 {
+        width: 50px;
+        left: 35px;
+    }
+    .clothes5 {
+        width: 40px;
+        left: 40px;
+        top: -10px;
+    }
+    .clothes8 {
+        width: 45px;
+        left: 36px;
+        top: 85px;
+    }
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="folder">
+            <div class="sound"></div>
+            <audio id="bgm" src="bgm/bgm.mp3"></audio>
+            <audio id="click-sound" src="bgm/click.mp3"></audio>
+            <div class="box">
+                <div class="pet">
+                    <img src="clothes/clothes1.svg" class="clothes1 clothes">
+                    <img src="clothes/clothes2.svg" class="clothes2 clothes">
+                    <img src="clothes/clothes3.svg" class="clothes3 clothes">
+                    <img src="clothes/clothes4.svg" class="clothes4 clothes">
+                    <img src="clothes/clothes6.svg" class="clothes6 clothes">
+                    <img src="clothes/clothes7.svg" class="clothes7 clothes">
+                    <img src="clothes/clothes9.svg" class="clothes9 clothes">
+                    <img src="clothes/clothes10.svg" class="clothes10 clothes">
+                    <img src="clothes/clothes11.svg" class="clothes11 clothes">
+                    <img src="clothes/clothes14.svg" class="clothes14 clothes">
+                    
+                
+                    <img src="clothes/clothes5.svg" class="clothes5 clothes">
+
+                    <img src="clothes/clothes8.svg" class="clothes8 clothes">
+                    
+                </div>
+                <div class="pet_bye"></div>
+                <div class="talk_alone"></div>
+                <div class="talk_bye"></div>
+                <img class="talk_back" src="png/back_talk.png">
+
+
+
+                <div class="clothes_sell">
+                    <div class="container">
+                        <div class="sell sell1">
+                            <img src="clothes/clothes1.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell2">
+                            <img src="clothes/clothes2.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell3">
+                            <img src="clothes/clothes3.svg">
+                            <h6>1100원</h6>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="sell sell4">
+                            <img src="clothes/clothes4.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell5">
+                            <img src="clothes/clothes6.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell6">
+                            <img src="clothes/clothes7.svg">
+                            <h6>1100원</h6>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="sell sell7">
+                            <img src="clothes/clothes9.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell8">
+                            <img src="clothes/clothes10.svg">
+                            <h6>1100원</h6>
+                        </div>
+    
+                        <div class="sell sell9">
+                            <img src="clothes/clothes11.svg">
+                            <h6>1100원</h6>
+                        </div>
+                    </div>
+                    <div class="container">
+                        
+                    <div class="sell sell10">
+                        <img src="clothes/clothes14.svg">
+                        <h6>1100원</h6>
+                    </div>
+
+                    <div class="sell sell11">
+                        <img src="clothes/clothes5.svg">
+                        <h6>1100원</h6>
+                    </div>
+
+                    <div class="sell sell12">
+                        <img src="clothes/clothes8.svg">
+                        <h6>1100원</h6>
+                    </div>
+                    </div>
+                    <div class="sell_container">
+                        <div class="cloth_btn">구매하기</div>
+                        <h3>클릭해서 미리 입혀볼 수 있어요!</h3>
+                    </div>
+                </div>
+
+                <div class="alert">
+                    <div class="yes">예</div>
+                    <div class="no">아니오</div>
+                </div>
+
+
+
+
+                <div class="talk_with">
+                    <p></p>
+                    <div class="next_btn"></div>
+                </div>
+            </div>
+            <div class="spaceship_light"></div>
+            <div class="spaceship"></div>
+            
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="dumbbell"></div>
+            <div class="book"></div>
+
+            <img class="gameover" src="svg/alert_gameover.svg">
+            <a class="gameover_txt" href="index.html">복구하기</a>
+            
+            <button id="send_love">
+                <ul>
+                    <li><img src="svg/icon_heart.svg"></li>
+                    <li>사랑해 주기 ♥</li>
+                </ul>
+            </button>
+            <button id="dumbbell_btn">
+                <ul>
+                    <li><img src="svg/icon_noah.svg"></li>
+                    <li>운동하기 ♥</li>
+                </ul>
+            </button>
+            <button id="flower_btn">
+                <ul>
+                    <li><img src="svg/icon_bam.svg"></li>
+                    <li>꽃 선물하기 ♥</li>
+                </ul>
+            </button>
+            <button id="book_btn">
+                <ul>
+                    <li><img src="svg/icon_book.svg"></li>
+                    <li>책 선물하기 ♥</li>
+                </ul>
+            </button>
+            <button id="eat_btn">
+                <ul>
+                    <li><img src="svg/icon_eat.svg"></li>
+                    <li>밥 먹이기 ♥</li>
+                </ul>
+            </button>
+            <button id="talk_btn">
+                <ul>
+                    <li><img src="svg/icon_talk.svg"></li>
+                    <li>대화하기 ♥</li>
+                </ul>
+            </button>
+            <button id="sleep_btn">
+                <ul>
+                    <li><img src="svg/icon_sleep.svg"></li>
+                    <li>재우기 ♥</li>
+                </ul>
+            </button>
+
+            <div id="clothes_btn">
+                <img src="clothes/clothes6.svg">
+            </div>
+        </div>
+    </div>
+
+<script src="game3_bam.js">
+    
+</script>
+<script src="clothes.js"></script>
+<script src="sound.js"></script> 
+</body>
+</html>

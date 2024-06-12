@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹계인펫밤비청소년기</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game2.css">
+<style>
+    .pet {
+        background-image: url('svg/pet_2_bam_front.svg');
+    }
+    .book {
+        background-image: url('svg/book_yellow.svg');
+      }    
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="folder">
+            <div class="sound"></div>
+            <audio id="bgm" src="bgm/bgm.mp3"></audio>
+            <audio id="click-sound" src="bgm/click.mp3"></audio>
+            <div class="box">
+                <div class="pet"></div>
+                <div class="pet_bye"></div>
+                <div class="talk_alone"></div>
+                <div class="talk_bye"></div>
+                <img class="gameover" src="svg/alert_gameover.svg">
+                <a class="gameover_txt" href="index.html">복구하기</a>
+            </div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="dumbbell"></div>
+            <div class="book"></div>
+            
+            <button id="send_love">
+                <ul>
+                    <li><img src="svg/icon_heart.svg"></li>
+                    <li>사랑해 주기 ♥</li>
+                </ul>
+            </button>
+            <button id="dumbbell_btn">
+                <ul>
+                    <li><img src="svg/icon_noah.svg"></li>
+                    <li>운동하기 ♥</li>
+                </ul>
+            </button>
+            <button id="flower_btn">
+                <ul>
+                    <li><img src="svg/icon_bam.svg"></li>
+                    <li>꽃 선물하기 ♥</li>
+                </ul>
+            </button>
+            <button id="book_btn">
+                <ul>
+                    <li><img src="svg/icon_book.svg"></li>
+                    <li>책 선물하기 ♥</li>
+                </ul>
+            </button>
+        </div>
+    </div>
+
+<script src="sound.js"></script>
+<script>
+    let pet = document.querySelector('.pet');
+    let loveBtn = document.querySelector('#send_love');
+    let dumbbellBtn = document.querySelector('#dumbbell_btn');
+    let flowerBtn = document.querySelector('#flower_btn');
+    let heart = document.querySelector('.heart');
+    let dumbbell = document.querySelector('.dumbbell');
+    let flower = document.querySelector('.flower');
+    let box = document.querySelector('.box');
+    let clickCount = 0;
+    let bookClickCount = 0;
+    let talkBye = document.querySelector('.talk_bye');
+    let btn = document.querySelectorAll('button');
+    let bookBtn = document.querySelector('#book_btn');
+    let book = document.querySelector('.book')
+    let gameOver = document.querySelector('.gameover')
+    let gameOverTxt = document.querySelector('.gameover_txt')
+    
+
+    // pet 클릭 시 랜덤하게 독백 보이기
+    let talkAlone = document.querySelector('.talk_alone');
+    let images = [
+        'url(png/random1.png)',
+        'url(png/random2.png)',
+        'url(png/random3.png)',
+        'url(png/random4.png)',
+        'url(png/random5.png)',
+        'url(png/random6.png)',
+        'url(png/random7.png)',
+        'url(png/random8.png)',
+
+    ]
+
+    function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        return images[randomIndex];
+    }
+
+    pet.addEventListener('click', () => {
+        talkAlone.style.transition = 'all 1s ease';
+        talkAlone.style.opacity = 1;
+        talkAlone.style.transform = 'scale(1.1)';
+        talkAlone.style.backgroundImage = getRandomImage();
+
+        setTimeout(() => {
+            talkAlone.style.opacity = '0';
+            talkAlone.style.transform = 'scale(1)';
+        }, 1500)
+    })
+
+
+
+    // =========================================버튼 안 눌렸을 경우
+
+    let buttonClicked = false; // 버튼이 눌렸는지 여부를 추적하는 변수
+
+    // 버튼 클릭 이벤트 핸들러
+    function buttonClickHandler() {
+        buttonClicked = true; // 버튼이 눌렸음을 표시
+        clearTimeout(inactivityTimer3); // 타이머를 초기화하여 함수 실행 방지
+        clearTimeout(inactivityTimer6);
+        clearTimeout(inactivityTimer9);
+        clearTimeout(inactivityTimer12);
+    }
+
+    // 버튼에 클릭 이벤트 리스너 추가
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', buttonClickHandler);
+    });
+
+    // 함수 실행을 조절하는 부분
+    inactivityTimer3 = setTimeout(() => {
+        // 만약 버튼이 눌리지 않았다면 함수 실행
+        if (!buttonClicked) {
+            talkBye.style.transition = 'all 1s ease';
+            talkBye.style.opacity = 1;
+            talkBye.style.backgroundImage = 'url("png/talk_alone1.png")';
+            talkBye.style.transform = 'scale(1.1)';
+            
+            setTimeout(() => {
+                talkBye.style.opacity = 0;
+                talkBye.style.transform = 'scale(1)';
+            }, 1000);
+        }
+    }, 3000);
+
+    inactivityTimer6 = setTimeout(() => {
+        // 만약 버튼이 눌리지 않았다면 함수 실행
+        if (!buttonClicked) {
+            talkBye.style.transition = 'all 1s ease';
+            talkBye.style.opacity = 1;
+            talkBye.style.backgroundImage = 'url("png/talk_alone2.png")';
+            talkBye.style.transform = 'scale(1.1)';
+            pet.style.backgroundImage = 'url("svg/pet_2_bam_sad.svg")';
+            pet.style.transition = 'all 1s ease'
+            
+            setTimeout(() => {
+                talkBye.style.opacity = 0;
+                talkBye.style.transform = 'scale(1)';
+            }, 1000);
+        }
+    }, 6000);
+
+    inactivityTimer9 = setTimeout(() => {
+        talkBye.style.opacity = 1;
+            talkBye.style.backgroundImage = 'url("png/talk_alone3.png")';
+            talkBye.style.transform = 'scale(1.1)';
+            pet.style.transition = 'all 1s ease'
+            box.style.transition = 'all 1s ease'
+            
+            setTimeout(() => {
+                talkBye.style.opacity = 0;
+                talkBye.style.transform = 'scale(1)';
+            }, 1000)
+
+            setTimeout(() => {
+                pet.style.backgroundImage = 'url("svg/pet_2_bam_back.svg")';
+            }, 1000)
+
+            setTimeout(() => {
+                pet.style.left = 500 + 'px';
+                pet.style.top = 120 + 'px';
+                box.style.backgroundImage = 'url("svg/room_pet2_bye.svg")'
+            }, 1000)
+
+    }, 9000);
+
+    // 함수 실행을 조절하는 부분
+    inactivityTimer12 = setTimeout(() => {
+        // 만약 버튼이 눌리지 않았다면 함수 실행
+        if (!buttonClicked) {
+            pet.style.transition = 'all 1s ease'
+            box.style.transition = 'all 1s ease'
+            pet.style.left = '550px'
+            pet.style.transform = 'scale(0)';
+            pet.style.opacity = 0;
+            
+            setTimeout(() => {
+                box.style.backgroundImage = 'url("svg/room_pet2.svg")'
+            }, 1000);
+            setTimeout(() => {
+                gameOver.style.transform = 'scale(1)'
+                gameOver.style.opacity = '1';
+            }, 2000)
+            setTimeout(() => {
+                gameOverTxt.style.opacity = '1';
+            }, 2500)
+        }
+    }, 12000);
+
+
+
+
+
+    // book버튼================================================
+    function sendBook() {
+        book.style.transition = "all 1s";
+        book.style.opacity = 1;
+        book.style.left = '480px';
+        book.style.transform = 'scale(1.3)';
+
+        pet.style.backgroundImage = "url('svg/pet_2_bam_book.svg')";
+
+        setTimeout(() => {
+            book.style.opacity = 0;
+            book.style.transform = 'scale(1)';
+            pet.style.backgroundImage = "url('svg/pet_2_bam_front.svg')";
+        }, 1000);
+
+        bookClickCount++;
+
+        if(bookClickCount > 5) {
+            pet.style.transition = "opacity 2s";
+            pet.style.opacity = 0;
+
+            setTimeout(() => {
+                window.location.href = 'game3_bam.html'
+            }, 3000)
+        }
+    }
+    bookBtn.addEventListener('click', sendBook);
+
+
+
+
+
+    // 하트 버튼 눌렀을 경우
+    function sendLove() {
+        // 하트 이미지 나오게 하기
+        heart.style.transition = "all 1s";
+        pet.style.transition = "all .3s ease";
+        heart.style.opacity = 1;
+        heart.style.transform = 'scale(1.5)';
+        
+
+        pet.style.backgroundImage = "url('svg/pet_2_bam_front_happy.svg')"
+
+        setTimeout(() => {
+            heart.style.opacity = 0;
+            heart.style.transform = 'scale(1)';
+            pet.style.backgroundImage = "url('svg/pet_2_bam_front.svg')"
+        }, 500);
+    }
+    loveBtn.addEventListener('click', sendLove);
+
+
+
+    // 덤벨 버튼 눌렀을 경우
+    function sendDumbbell() {
+        dumbbell.style.transition = "all 1s";
+        dumbbell.style.opacity = 1;
+        dumbbell.style.top = '500px';
+        pet.style.backgroundImage = "url('svg/pet_2_bam_front_happy.svg')"
+
+        setTimeout(() => {
+            dumbbell.style.opacity = 0;
+            dumbbell.style.top = '430px';
+            pet.style.backgroundImage = "url('svg/pet_2_bam_front.svg')"
+        }, 1000);
+    }
+    dumbbellBtn.addEventListener('click', sendDumbbell);
+    
+
+
+    // 꽃 버튼 눌렀을 경우
+    function sendFlower() {
+        flower.style.transition = "all 1s";
+        flower.style.opacity = 1;
+        flower.style.transform = 'scale(1.5)';
+        pet.style.backgroundImage = "url('svg/pet_2_bam_front_happy.svg')"
+
+        setTimeout(() => {
+            flower.style.opacity = 0;
+            flower.style.transform = 'scale(1)';
+            pet.style.backgroundImage = "url('svg/pet_2_bam_front.svg')"
+        }, 500);
+    }
+    flowerBtn.addEventListener('click', sendFlower);
+</script>
+    
+</body>
+</html>

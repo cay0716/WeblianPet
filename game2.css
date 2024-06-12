@@ -1,0 +1,65 @@
+.box {
+    background-image: url('svg/room_pet2.svg');
+}
+.pet {
+    position: absolute;
+    display: inline-block;
+    left: 300px;
+    animation: scaleAnimation 2s infinite;
+    top: 320px;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+}
+
+
+.talk_alone, .talk_bye {
+    position: absolute;
+    top: 300px;
+    left: 420px;
+    width: 140px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+
+  .gameover {
+    position: absolute;
+    width: 400px;
+    top: 170px;
+    left: 180px;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s ease;
+  }
+  .gameover_txt {
+    position: absolute;
+    text-decoration: none;
+    color: #ff76b3;
+    border: solid 1px #ff76b3;
+    padding: 3px 20px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 2px 2px #ff76b3;
+    top: 304px;
+    left: 470px;
+    transition: .5s ease;
+    opacity: 0;
+    transition: .5s ease;
+  }
+.gameover_txt:hover {
+    color: #FFCFE5;
+    background: #ff76b3;
+}

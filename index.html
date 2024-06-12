@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹계인펫 시작</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="wrap">
+            <div class="computer">
+                
+                <div class="sound"></div>
+                <audio id="bgm" src="bgm/bgm.mp3"></audio>
+                <audio id="click-sound" src="bgm/click.mp3"></audio>
+
+                <div class="bg">
+                    <img class="egg" src="svg/pet_egg.svg">
+                    <img class="alert1" src="png/alert_opening.png">
+                    <img class="alert2" src="png/alert_opening.png">
+                    <img class="alert3" src="png/alert_opening.png">
+                    <a class="a" href="game1.html"> <b>압축 풀기</b></a>
+                    <img class="bam" src="svg/opening_bam.svg">
+                    <img class="noah" src="svg/opening_noah.svg">
+                </div>
+                <img class="title" src="svg/title.svg">
+                <button class="start_btn">start!</button>
+
+                <div class="hint">
+                    <img src="png/bam_bg.png" class="bam_bg">
+                    <img src="png/noah_bg.png" class="noah_bg">
+
+                    <h2>게임 배경</h2> <br><br>
+                    <p>
+                        어느 날 나의 컴퓨터 폴더에 알 수 없는 알집 파일이 생겼다!
+                        <br> 뭐지, 이거...?! 압축을 풀으라는 경고창과 함께 모니터가 꺼지질 않아!
+                        <br> 하는 수 없이 압축을 풀어 보는데...
+                        <br><br>
+                        내 모니터 속 작은 펫, 웹계인펫
+                        <br>두근두근...... 어떠한 펫이 탄생할까?
+                    </p>
+
+                    <div class="next_btn"></div>
+                </div>
+
+                <!-- <div class="hint2 hint">
+                    <img src="png/noah_bg.png" class="noah_bg">
+                    <h2>게임 방법</h2><br><br>
+                    <p>
+                        화면 우측에 있는 버튼을 누를 시 펫이 진화합니다.
+                        <br>어떤 버튼을 누르느냐에 따라 펫의 진화 형태가 달라져요!
+                        <br>사랑해 주고, 밥도 주고, 대화를 하며 펫과 친해져 보아요!
+                    </p>
+
+                    <div class="next_btn2"></div>
+                </div> -->
+            </div>
+
+            
+        </div>
+<script src="sound.js"></script>
+<script>
+    let bam = document.querySelector('.bam')
+    let noah = document.querySelector('.noah')
+    let title = document.querySelector('.title')
+    let startBtn = document.querySelector('.start_btn')
+    let bg = document.querySelector('.bg')
+    let egg = document.querySelector('.egg')
+    let alert1 = document.querySelector('.alert1')
+    let alert2 = document.querySelector('.alert2')
+    let alert3 = document.querySelector('.alert3')
+    let a = document.querySelector('.a');
+    let nextBtn = document.querySelector('.next_btn')
+    let hint = document.querySelector('.hint')
+    let clickNextCount = 0;
+
+    setTimeout(() => {
+        title.style.opacity = '1';
+        title.style.transform = 'scale(1)';
+    }, 500)
+    setTimeout(() => {
+        startBtn.style.opacity = '1';
+        startBtn.style.transform = 'scale(1)';
+    },1000)
+    setTimeout(() => {
+        bam.style.opacity = '1';
+        bam.style.top = '1px';
+        bam.style.left = '100px';
+        bam.style.transform = 'scale(1)';
+    },1500)
+    setTimeout(() => {
+        noah.style.opacity = '1';
+        noah.style.top = '280px';
+        noah.style.left = '360px';
+        noah.style.transform = 'scale(1)';
+    },2000)
+    
+
+    function clickStart() {
+        title.style.opacity = '0';
+        startBtn.style.opacity = '0';
+        bam.style.opacity = '0';
+        noah.style.opacity = '0';
+        hint.style.opacity = 1;
+        hint.style.display = 'block'
+        bg.style.backgroundImage = 'url("png/white_heart_bg.jpg")'
+    }
+    startBtn.addEventListener('click', clickStart);
+
+    function clickNext() {
+        clickNextCount++
+
+        if(clickNextCount === 1) {
+            document.querySelector('.bam_bg').style.opacity = 0;
+            document.querySelector('.noah_bg').style.opacity = 1;
+            document.querySelector('.hint h2').innerHTML = '게임방법'
+            document.querySelector('.hint p').innerHTML = '화면 우측에 있는 버튼을 누를 시 펫이 진화합니다. <br>어떤 버튼을 누르느냐에 따라 펫의 진화 형태가 달라져요! <br>사랑해 주고, 밥도 주고, 대화를 하며 펫과 친해져 보아요!'
+            document.querySelector('.hint h2').style.top = '134px'
+            document.querySelector('.hint p').style.top = '144px'
+            document.querySelector('.hint h2').style.left = '20px'
+            document.querySelector('.hint p').style.left = '20px'
+        }
+        else if(clickNextCount === 2) {
+            bg.style.backgroundImage = 'url("png/opening2.png")'
+            hint.style.opacity = 0;
+            hint.style.display = 'none';
+            egg.style.opacity = '1';
+            egg.style.transform = 'scale(1)';
+    
+    
+            setTimeout(()=>{
+                alert1.style.opacity = '1';
+            },1500)
+            setTimeout(()=>{
+                alert2.style.opacity = '1';
+            },1700)
+            setTimeout(()=>{
+                alert3.style.opacity = '1';
+                a.style.opacity = '1';
+            },1900)
+        }
+
+    }
+    nextBtn.addEventListener('click', clickNext);
+
+   
+</script>
+</body>
+</html>

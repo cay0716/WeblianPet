@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바미엔딩</title>
+    <link rel="stylesheet" href="end.css">
+<style>
+   .spaceship_noah {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0px;
+    left: 160px;
+    transform: scale(0);
+    transition: 1s ease;
+    
+   }
+   .sound {
+    position: absolute;
+    background: #ff9dcb;
+    border: solid 6px #f85fa4;
+    border-radius: 50%;
+    background-image: url("bgm/sound_on.svg");
+    width: 50px;
+    height: 50px;
+    top: 550px;
+    left: 750px;
+    z-index: 10000;
+}
+
+   @keyframes noah {
+        0% {
+            left: 160px;
+            transform: rotate(0deg);
+        }
+        25% {
+            left: 250px;
+            transform: rotate(-25deg);
+        }
+        50% {
+            left: 90px;
+            transform: rotate(35deg);
+        }
+        100% {
+            left: 160px;
+            transform: rotate(0deg);
+        }
+   }
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="computer">
+            <div class="sound"></div>
+            <audio id="bgm" src="bgm/end.mp3"></audio>
+            <audio id="click-sound" src="bgm/click.mp3"></audio>
+            <div class="bg">
+                <img class="spaceship_noah" src="svg/end_noah_2.svg">
+            </div>
+            <button class="start_btn">restart!</button>
+        </div>
+        </div>
+<script src="sound.js"></script>
+<script>
+    let reStartBtn = document.querySelector('.start_btn')
+    let bg = document.querySelector('.bg')
+    let egg = document.querySelector('.egg')
+    let alert1 = document.querySelector('.alert1')
+    let alert2 = document.querySelector('.alert2')
+    let alert3 = document.querySelector('.alert3')
+    let a = document.querySelector('.a');
+    let noah = document.querySelector('.spaceship_noah')
+
+
+    setTimeout(() => {
+        noah.style.transform = 'scale(1)'
+    },500)
+    setTimeout(() => {
+        noah.style.top = '40px'
+    }, 1500)
+    setTimeout(() => {
+        noah.style.animation = 'noah 6s infinite';
+    }, 3000)
+    setTimeout(() => {
+        reStartBtn.style.opacity = '1';
+        reStartBtn.style.transform = 'scale(1)';
+    },5000)
+
+    
+    function clickStart() {
+        window.location.href = 'index.html'
+        
+    }
+    reStartBtn.addEventListener('click', clickStart);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.95 17.11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e86792;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ff7db8;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m19.47,12.06l7.11,4.1c2.58,1.49,5.81-.37,5.81-3.36V4.61c0-2.98-3.23-4.85-5.81-3.36l-7.11,4.1c-2.58,1.49-2.58,5.22,0,6.71Z"/>
+  <g>
+    <line class="cls-2" x1="21.12" y1="7.65" x2="25" y2="6.02"/>
+    <line class="cls-2" x1="25" y1="11.4" x2="21.12" y2="9.77"/>
+  </g>
+  <path class="cls-1" d="m13.86,12.06l-7.11,4.1c-2.58,1.49-5.81-.37-5.81-3.36V4.61c0-2.98,3.23-4.85,5.81-3.36l7.11,4.1c2.58,1.49,2.58,5.22,0,6.71Z"/>
+  <g>
+    <line class="cls-2" x1="12.21" y1="7.65" x2="8.32" y2="6.02"/>
+    <line class="cls-2" x1="8.32" y1="11.4" x2="12.21" y2="9.77"/>
+  </g>
+  <rect class="cls-1" x="12.43" y="4.27" width="8.88" height="8.88" rx="1.84" ry="1.84"/>
+</svg>

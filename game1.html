@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹계인펫</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game1.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="folder">
+            <div class="sound"></div>
+            <audio id="bgm" src="bgm/bgm.mp3"></audio>
+            <audio id="click-sound" src="bgm/click.mp3"></audio>
+            <div class="box">
+                <div class="egg">
+                    <img src="svg/pet_egg.svg">
+                </div>
+                <div class="pet"></div>
+            </div>
+            <div class="heart"></div>
+            <div class="flower"></div>
+            <div class="dumbbell"></div>
+            
+            <button id="send_love">
+                <ul>
+                    <li><img src="svg/icon_heart.svg"></li>
+                    <li>사랑해 주기 ♥</li>
+                </ul>
+            </button>
+            <button id="dumbbell_btn">
+                <ul>
+                    <li><img src="svg/icon_noah.svg"></li>
+                    <li>운동하기 ♥</li>
+                </ul>
+            </button>
+            <button id="flower_btn">
+                <ul>
+                    <li><img src="svg/icon_bam.svg"></li>
+                    <li>꽃 선물하기 ♥</li>
+                </ul>
+            </button>
+        </div>
+
+
+
+    </div>
+    <script src="sound.js"></script>
+<script>
+    let egg = document.querySelector('.egg');
+    let pet = document.querySelector('.pet');
+    let loveBtn = document.querySelector('#send_love');
+    let dumbbellBtn = document.querySelector('#dumbbell_btn');
+    let flowerBtn = document.querySelector('#flower_btn');
+    let heart = document.querySelector('.heart');
+    let dumbbell = document.querySelector('.dumbbell');
+    let flower = document.querySelector('.flower');
+    let box = document.querySelector('.box');
+    let clickCount = 0;
+    let flowerClickCount = 0;
+    let dumbbellClickCount = 0;
+
+    // 하트 버튼 눌렀을 경우
+    function sendLove() {
+        // 하트 이미지 나오게 하기
+        heart.style.transition = "all 1s";
+        heart.style.opacity = 1;
+        heart.style.transform = 'scale(1.5)';
+
+        setTimeout(() => {
+            heart.style.opacity = 0;
+            heart.style.transform = 'scale(1)';
+        }, 500);
+
+        clickCount++;
+        if (clickCount > 5) {
+            egg.style.transition = "opacity 1s";
+            pet.style.transition = "opacity 2s";
+
+            egg.style.opacity = 0;
+            
+            setTimeout(() => {
+                pet.style.opacity = 1;
+            }, 1000)
+
+            dumbbellBtn.style.opacity = 1;
+            flowerBtn.style.opacity = 1;
+
+            box.style.transition = "all 1s ease"
+            box.style.backgroundImage = "url('svg/room_pet1.svg')";
+            box.style.boxShadow = 'none';
+            
+        }
+    }
+    loveBtn.addEventListener('click', sendLove);
+
+
+
+    // 덤벨 버튼 눌렀을 경우
+    function sendDumbbell() {
+        dumbbell.style.transition = "all 1s";
+        dumbbell.style.opacity = 1;
+        dumbbell.style.top = '500px';
+
+        pet.style.backgroundImage = "url('svg/pet_1_happy.svg')";
+
+        setTimeout(() => {
+            dumbbell.style.opacity = 0;
+            dumbbell.style.top = '430px';
+            pet.style.backgroundImage = "url('svg/pet_1_normal.svg')";
+        }, 1000);
+
+        
+        dumbbellClickCount++;
+        if(dumbbellClickCount > 5) {
+            pet.style.transition = "opacity 2s";
+            pet.style.opacity = 0;
+
+            setTimeout(() => {
+                location.href = 'game2_noah.html';
+            }, 2000);
+        }
+
+    }
+    dumbbellBtn.addEventListener('click', sendDumbbell);
+    
+
+
+    // 꽃 버튼 눌렀을 경우
+    function sendFlower() {
+        flower.style.transition = "all 1s";
+        flower.style.opacity = 1;
+        flower.style.transform = 'scale(1.5)';
+
+        pet.style.backgroundImage = "url('svg/pet_1_happy.svg')";
+
+        setTimeout(() => {
+            flower.style.opacity = 0;
+            flower.style.transform = 'scale(1)';
+            pet.style.backgroundImage = "url('svg/pet_1_normal.svg')";
+        }, 500);
+
+        flowerClickCount++;
+
+        if(flowerClickCount > 5) {
+            pet.style.transition = "opacity 2s";
+            pet.style.opacity = 0;
+
+            setTimeout(() => {
+                window.location.href = 'game2_bam.html'
+            }, 3000)
+        }
+    }
+    flowerBtn.addEventListener('click', sendFlower);
+</script>
+</body>
+</html>
