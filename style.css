@@ -12,8 +12,12 @@ body {
     font-family: "Dongle", sans-serif;
     text-align: center;
     justify-content: center;
+    -ms-overflow-style: none;
 }
 
+::-webkit-scrollbar {
+ display: none;
+}
 .folder {
     margin: 0 auto;
     width: 900px;
